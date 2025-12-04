@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rhythm</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div id="app">
+    <div id="auth-view" class="hidden">
+      <h2>Welcome to Rhythm</h2>
+      <p>Please use the web app to manage reminders.</p>
+      <button id="open-web-btn">Open Web App</button>
+    </div>
+
+    <div id="main-view" class="hidden">
+      <header>
+        <h1>Rhythm</h1>
+        <button id="refresh-btn">Refresh</button>
+      </header>
+
+      <div id="reminders-list">
+        <p class="loading">Loading reminders...</p>
+      </div>
+
+      <div class="controls">
+        <label>
+          <input type="checkbox" id="notifications-toggle" checked>
+          Notifications Enabled
+        </label>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

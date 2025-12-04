@@ -1,0 +1,49 @@
+{
+    "manifest_version": 3,
+    "name": "Rhythm - Productivity Reminders",
+    "version": "1.0",
+    "description": "Stay healthy and productive with smart reminders.",
+    "permissions": [
+        "storage",
+        "alarms",
+        "notifications",
+        "identity"
+    ],
+    "host_permissions": [
+        "http://localhost:3000/*",
+        "https://*.supabase.co/*"
+    ],
+    "background": {
+        "service_worker": "service_worker.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://localhost:3000/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "options_page": "debug.html",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon16.png",
+            "48": "icon48.png",
+            "128": "icon128.png"
+        }
+    },
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "externally_connectable": {
+        "matches": [
+            "http://localhost:3000/*"
+        ]
+    }
+}
